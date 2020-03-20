@@ -1,0 +1,319 @@
+/* Global */
+
+$color-main: #e67e22; /* nazwa zmiennej colormain i wartosc podana */
+$font-text: 'Josefin Sans', sans-serif;  /* czcionka jako zmienna w scss */
+$font-header: 'Open Sans', sans-serif;    /* zmienna do zdefiniowania czcionki */
+
+*, *::before, *::after {
+   box-sizing: border-box; 
+}
+
+/* selektor np body i przypsujemy mu wlasciwosci */
+body {
+    
+    margin: 0;           /* usuwanie marginesu ktory nadaje przegladarka */
+    text-align: center;  /* wysrodkowanie */
+    background: #fff;    /* kolor tla #fff */
+    color: #FBFCFC;      /* kolor czcionki*/
+    font-size: 16px;     /* rozmiar czcionki */
+    line-height: 1.7;     /* odleglosc miedzy wierszami tekstu */
+    font-family: $font-header;
+    
+}
+
+
+.container {
+    
+    max-width: 1140px;   /* szerokosc max */
+    margin: 0 auto;      /* centruje nam element poziomo */
+    padding: 0 20px;     /* odstep od lewej i prawej 20pikseli */
+      
+}
+
+section {
+    padding: 108px 0;    /* sekcja ma taki sam gorny i dolny padding */
+    
+}
+
+/* Splash - sekcja i umieszczamy tu style do danej sekcji */
+
+/* selektor splash */
+.splash {
+    height: 100vh;       /* sekcja bedzie tak wysoka jak okno przegladarki */
+    position: relative;  /* pozycje elementow html wazne, static relative positive i fixed */
+    background-image: url('https://i.postimg.cc/k5d28X1X/wnetrze-biuro.jpg');
+    background-position: center center;   /* pozycje tla do poczytania */
+    background-size: cover;
+    background-attachment: fixed;  /* sprawdzic jak obecnosc tresci wplywa na zachowanie sekcji */
+      
+}
+
+    /* element wysrodkowany w obu osiach, wazne, jezeli chcemy zeby elemnt dziecko
+    byl w srodku elementu-rodzica, w pionie jak i poziomie, rodzicowi nadajemy 
+    position: relative;  a dziecku jak ponizej */
+.splash-inner {
+    position: absolute;     
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+/* wyciagamy logo z sekcji splash html */
+
+.splash i {
+
+font-size: 30px;                /* wielkosc ikony/loga */
+background: $color-main; 
+width: 50px;                    /* pozycjonowanie loga  */
+height: 50px;
+line-height: 50px;              /* wycentrowanie w pionie */
+color: #fff;                    
+border-radius: 50%;             /* zaokraglenie loga ! pod warunkiem ze logo jest kwadratem i ma np 50 na 50px */
+
+
+    
+}
+
+/* stylowanie tytulu czyli tagowi h1 w html nadalismy klase > page-title, 
+tworzymy selektor do page title w css i stylujemy  */
+.page-title {
+
+color: #fff;            /* na stronie css reference inne ciekawe efekty tekstu */
+font-size:  40px;
+margin:  48px 0 0 0;
+position: relative;
+font-family: $font-text;
+
+}
+
+/* aby dodac kreske pod tytulem tzw. element dekoracyjny, dodajemy pseudoelement ::after */
+
+/* pseudoelementy ::after i ::before wazne, mozemny podpiac dekoracje zamiast dworzyc osobny div?  */
+.page-title::after {
+    
+    position: absolute;
+    content: '';
+    bottom: -24px;
+    left: 50%;
+    width: 100px;
+    height: 10px;
+    transform: translateX(-50%);      
+    /* centrowanie elementu w obu osiach, wazne, tutaj centrujemy tylko w osi X, poziomo, dlatego translateX */
+    background: $color-main;
+
+    
+}
+
+.page-subtitle {
+    
+    margin: 48px 0 0 0;
+    font-size: 30px;
+    color: #fff;
+    
+}
+/* koniec stylowania naglowka, wiecej styli w css reference */
+
+/* Intro */
+
+.intro {
+    
+    background: #e67e22;
+}
+
+/* stylujemy tak p tylko w sekcji intro, wybieramy wszystkie znaczniki p w sekcji intro, 
+jak wczesniej w sekcji splash */
+.intro p {
+    
+    width: 70%;
+    margin: 0 auto;
+    padding: 48px 0;
+    font-size: 20px;
+    
+    /* tworzymy linie tj. gorna i dolna ramke, border top bottom, pixel, styl solid, kolor */
+    border-top: 1px solid #3d3d3d;
+    border-bottom: 1px solid #3d3d3d;
+    
+}
+
+
+/* sekcja naglowka i akapitu z tekstem o sobie */
+
+.section-title {
+
+color: #2E4053;
+position: relative;
+font-size: 20px;
+margin: 0 0 48px 0;
+/* nadaje czcionke dla podtytulow, sans serif to tzw fallback czyli alternatywa - jezeli 
+josefin sans czcionka jest nieaktualna czy cos to zadziala sans serif - dobrze robic fallbacki w kodzie*/
+font-family: $font-text;
+   
+}
+
+/* linia dekoracyjna pod Hello World */
+
+.section-title::after {
+
+    position: absolute;
+    content: '';
+    bottom: -12px;
+    left: 50%;
+    width: 50px;
+    height: 10px;
+    transform: translateX(-50%);      
+    /* centrowanie elementu w obu osiach, wazne, tutaj centrujemy tylko w osi X, poziomo, dlatego translateX */
+    background: $color-main;
+    
+}
+
+
+/* About sekcja */
+
+.about {
+    
+    background: #5D6D7E;
+    
+}
+
+/* Walidacja kodu HTML */
+/* uzwanie schematow kolorow - wazne */
+
+/* sekcja Skills */
+
+.skills ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    
+    
+    .skills ul li {                   /* czy to jest dobrze? */
+        position: relative;
+    
+    }
+    
+}
+
+.skill-image {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;        
+    
+}
+
+.skill-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* object fit - cover nie dziala? */     
+    
+}
+
+.skill.right .skill-image {
+    right: 0;   
+    
+}
+
+.skill.right .skill-description {
+    padding: 36px 55% 36px 0;
+    text-align: right;
+    
+}
+
+.skill.left .skill-description {
+    padding: 36px 0 36px 55%;  
+    text-align: left;
+}
+
+.skill-title {
+    color: #2E4053;
+    position: relative;
+    font-size: 20px;
+    font-family: $font-text;
+    
+}
+
+.skill-description p {
+    color: #2E4053;
+    position: relative;
+    font-size: 20px; 
+    
+}
+
+.skill {
+    position: relative;
+    
+}
+
+/* nie wyswietla sie Things i enjoy very much, jak to zrobic ?, drugie section title */
+
+
+/* powiekszenie obrazkow po najechaniu, hover, transform i transition do poczytania*/
+
+.skill-image img:hover {
+    
+    width: 10px;
+    height: 10px;
+    transform: scale(3);
+    transition: all 3s;
+}
+
+
+/* to nie dziala, nadalem klase ROW elementowi UL */
+.row::before,  
+.row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.gallery-lefttop {
+    float: left;
+    width: 33.3333%;
+    height: 300px;
+}
+
+.gallery-middletop {
+     float: left;
+    width: 33.3333%;
+    height: 300px;
+}
+
+.gallery-righttop {
+     float: left;
+    width: 33.3333%;
+    height: 300px;
+}
+
+
+.gallery-leftbottom {
+     float: left;
+     width: 33.3333%;
+    height: 300px;
+    
+}
+
+
+.gallery-middlebottom {
+     float: left;
+     width: 33.3333%;
+    height: 300px;
+    
+}
+
+
+.gallery-rightbottom {
+     float: left;
+     width: 33.3333%;
+    height: 300px;
+    
+}
+
+.gallery img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    
+}
