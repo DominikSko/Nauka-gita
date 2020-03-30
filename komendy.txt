@@ -1,3 +1,21 @@
-autoprefixer-cli
+autoprefixer-cli    
+	documentation: https://www.npmjs.com/package/autoprefixer-cli
+
+
+Usage:
+
+autoprefixer-cli -o main.prefixed.css main.css
+
+
+
+
+
+
+
 
 html-validate
+	documentation: https://www.npmjs.com/package/html-validate
+
+Usage:
+
+html-validate FILENAME
